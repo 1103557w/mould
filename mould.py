@@ -1,15 +1,15 @@
 from flask import Flask, render_template
 
-app = Flask(__name__)
+mould = Flask(__name__)
 
-@app.route("/")
+@mould.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/result")
+@mould.route("/result")
 def result():
     return render_template("result.html")
 
 if __name__ == "__main__":
-    app.debug = True
-    app.run()
+    mould.debug = True
+    mould.run()
