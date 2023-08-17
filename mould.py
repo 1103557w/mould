@@ -6,7 +6,7 @@ mould = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@mould.route("/result")
+@mould.route("/result/", methods=["POST"])
 def result():
     return render_template("result.html")
 
