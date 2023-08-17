@@ -6,10 +6,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("result")
+@app.route("/result")
 def result():
     return render_template("result.html")
 
 if __name__ == "__main__":
-    Flask.debug = True
-    Flask.run()
+    app.debug = True
+    app.run()
