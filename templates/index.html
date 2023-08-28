@@ -1,23 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8", name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mould Calculator</title>
+        <style>
+        body {
+            font-size: 16px;
+            padding: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input[type="text"] {
+            width: 25%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        input[type="number"] {
+            width: 25%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        select {
+            width: 25%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            display: block;
+            width: 75%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
+
 </head>
 <body>
     <h1>Calculate your Mould Compensation</h1>
     <form method= "POST" action="{{ url_for("index") }}">
         {{ form.csrf_token }}
-       <div>{{ form.total_rooms.label }}:
-           {{ form.total_rooms}}</div>
-        <div>{{ form.rooms_affected.label }}:
+       <div><label for="{{ form.total_rooms.id }}">{{ form.total_rooms.label }}</label>
+        {{ form.total_rooms }}</div>
+
+        <div><label for="{{ form.rooms_affected.id }}">{{ form.rooms_affected.label }}</label>
             {{ form.rooms_affected }}</div>
-        <div>{{ form.rent.label }}:
+
+        <div><label for="{{ form.rent.id }}">{{ form.rent.label }}</label>
             {{ form.rent }}</div>
-        <div>{{ form.severity.label }}:
+
+        <div><label for="{{ form.severity.id }}">{{ form.severity.label }}</label>
             {{ form.severity }}</div>
-        <div>{{ form.mould_months.label }}:
-            {{ form.mould_months }}</div>
+
+        <div><label for="{{ form.mould_months.id }}">{{ form.mould_months.label }}</label>
+        {{ form.mould_months }}</div>
+
         <div><input type="submit" value="Calculate"></div>
     </form>
     {% if result %}
