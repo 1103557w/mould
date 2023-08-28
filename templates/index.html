@@ -6,8 +6,12 @@
 </head>
 <body>
     <h1>Calculate your Mould Compensation</h1>
-    <form method= "post" action="{{ url_for("result") }}" id="calculator_form">
-        <label for="total_rooms">Total Number of Rooms:</label>
+    <form method= "POST" action="{{ url_for("result") }}">
+       <div>{{ form.total_rooms.label }}</div>
+        <div>{{ form.rooms_affected.label }}</div>
+        <div>{{ form.rent.label }}</div>
+        <div>{{ form.severity.label }}</div>
+        <div>{{ form.mould_months.label }}</div>
     </form>
 </body>
 </html>
