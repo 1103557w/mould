@@ -7,11 +7,16 @@
 <body>
     <h1>Calculate your Mould Compensation</h1>
     <form method= "POST" action="{{ url_for("result") }}">
-       <div>{{ form.total_rooms.label }}</div>
-        <div>{{ form.rooms_affected.label }}</div>
-        <div>{{ form.rent.label }}</div>
-        <div>{{ form.severity.label }}</div>
-        <div>{{ form.mould_months.label }}</div>
+       <div>{{ form.total_rooms.label }}:
+           {{ form.total_rooms}}</div>
+        <div>{{ form.rooms_affected.label }}:
+            {{ form.rooms_affected }}</div>
+        <div>{{ form.rent.label }}:
+            {{ form.rent }}</div>
+        <div>{{ form.severity.label }}:
+            {{ form.severity }}</div>
+        <div>{{ form.mould_months.label }}:
+            {{ form.mould_months }}</div>
     </form>
 </body>
 </html>
