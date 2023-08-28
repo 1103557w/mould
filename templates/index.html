@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Calculate your Mould Compensation</h1>
-    <form method= "POST" action="{{ url_for("result") }}">
+    <form method= "POST" action="{{ url_for("index") }}">
        <div>{{ form.total_rooms.label }}:
            {{ form.total_rooms}}</div>
         <div>{{ form.rooms_affected.label }}:
@@ -17,6 +17,11 @@
             {{ form.severity }}</div>
         <div>{{ form.mould_months.label }}:
             {{ form.mould_months }}</div>
+        <div><input type="submit" value="Calculate"></div>
     </form>
+    {% if result %}
+        <h2>result is: {{ result }}</h2>
+    {% endif %}
+    <h3>can i even get stuff here?</h3>
 </body>
 </html>
