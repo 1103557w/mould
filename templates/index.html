@@ -7,6 +7,7 @@
 <body>
     <h1>Calculate your Mould Compensation</h1>
     <form method= "POST" action="{{ url_for("index") }}">
+        {{ form.csrf_token }}
        <div>{{ form.total_rooms.label }}:
            {{ form.total_rooms}}</div>
         <div>{{ form.rooms_affected.label }}:
@@ -22,6 +23,5 @@
     {% if result %}
         <h2>result is: {{ result }}</h2>
     {% endif %}
-    <h3>can i even get stuff here?</h3>
 </body>
 </html>
