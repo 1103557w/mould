@@ -2,16 +2,14 @@ from flask import Flask, render_template, flash
 from forms import CalculatorForm
 
 
-# {': 12, : 2, : 2, '
-# rent': 132.0, 'severity': '0.7', 'csrf_token': 'IjY1ZDhkMGQzOTI5ZjMyMmIzYjA1NmQ4YWQyOGNkYWViMjdmYTE5ZmUi.ZOzJIg.7Dgh7KrtjgAkBmTZ55qm05OvwNU'}
-mould = Flask(__name__)
+app = Flask(__name__)
 
-mould.config.update(dict(
+app.config.update(dict(
     SECRET_KEY="powerful secretkey",
     WTF_CSRF_SECRET_KEY="a csrf secret key"
 ))
 
-@mould.route("/", methods=["POST", "GET"])
+@app.route("/", methods=["POST", "GET"])
 def index():
     form = CalculatorForm()
     if form.validate_on_submit():
@@ -33,5 +31,5 @@ def index():
 #     print(form.data)
 
 if __name__ == "__main__":
-    mould.debug = True
-    mould.run()
+    app.debug = True
+    app.run()
