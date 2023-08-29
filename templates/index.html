@@ -52,23 +52,28 @@
 <body>
     <h1>Calculate your Mould Compensation</h1>
     <form method= "POST" action="{{ url_for("index") }}">
-        {{ form.csrf_token }}
-       <div><label for="{{ form.total_rooms.id }}">{{ form.total_rooms.label }}</label>
-        {{ form.total_rooms }}</div>
+        {{ form1.csrf_token }}
+       <div><label for="{{ form1.total_rooms.id }}">{{ form1.total_rooms.label }}</label>
+        {{ form1.total_rooms }}</div>
 
-        <div><label for="{{ form.rooms_affected.id }}">{{ form.rooms_affected.label }}</label>
-            {{ form.rooms_affected }}</div>
+        <div><label for="{{ form1.rooms_affected.id }}">{{ form1.rooms_affected.label }}</label>
+            {{ form1.rooms_affected }}</div>
 
-        <div><label for="{{ form.rent.id }}">{{ form.rent.label }}</label>
-            {{ form.rent }}</div>
+        <div><label for="{{ form1.rent.id }}">{{ form1.rent.label }}</label>
+            {{ form1.rent }}</div>
 
-        <div><label for="{{ form.severity.id }}">{{ form.severity.label }}</label>
-            {{ form.severity }}</div>
+        <div><label for="{{ form1.severity.id }}">{{ form1.severity.label }}</label>
+            {{ form1.severity }}</div>
 
-        <div><label for="{{ form.mould_months.id }}">{{ form.mould_months.label }}</label>
-        {{ form.mould_months }}</div>
+        <div><label for="{{ form1.mould_months.id }}">{{ form1.mould_months.label }}</label>
+        {{ form1.mould_months }}</div>
 
-        <div><input type="submit" value="Calculate"></div>
+        <div>{{form1.calculate}}</div>
+    </form>
+    <form method= "POST" action="{{ url_for("index") }}">
+        {{ form2.csrf_token }}
+        <div>{{ form2.text }}</div>
+        <div>{{ form2.submit }}</div>
     </form>
     {% if result %}
         <h2>result is: {{ result }}</h2>
